@@ -26,7 +26,7 @@ SECRET_KEY = 'gw57%y%0(gz!uy6ii4oyg%qxwzzd2*h_)#95u%4btq=c&)g^mw'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://sabari-resume.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['sabari-resume.herokuapp.com','127.0.0.1']
 
 
 # Application definition
