@@ -129,13 +129,19 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
+AUTHENTICATION_BACKENDS =[
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 
-
-
-
+if os.getcwd() == '/app':
+    DEBUG=False
+    
+    
 
 
 
