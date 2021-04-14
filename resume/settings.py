@@ -137,6 +137,9 @@ AUTHENTICATION_BACKENDS =[
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
 
 if os.getcwd() == '/app':
     DEBUG=False
