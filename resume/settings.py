@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gw57%y%0(gz!uy6ii4oyg%qxwzzd2*h_)#95u%4btq=c&)g^mw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['sabari-resume.herokuapp.com','127.0.0.1']
 
@@ -80,15 +80,10 @@ WSGI_APPLICATION = 'resume.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'de2e6pqjle6b1m',
-        'USER':'fnvpcrzdwfizxn',
-        'PASSWORD':'14ac3f1d317b10ef2b66015636dabb5841a9f0e2330524fc16d1c91e9234e727',
-        'HOST':'ec2-34-198-31-223.compute-1.amazonaws.com',
-        'PORT':'5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -136,20 +131,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-
-AUTHENTICATION_BACKENDS =[
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-]
-
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-
-if os.getcwd() == '/app':
-    DEBUG=False
-    
-    
-
-
+django_heroku.settings(locals())
 
